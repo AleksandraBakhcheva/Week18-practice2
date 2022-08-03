@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="form__header">
+            <img src="images/logo.png" alt="logo" />
+            <h2>Регистрация пользователя</h2>
+        </div>
+        <form>
+            <div class="inputs">
+                <h3>Личные данные</h3>
+                <div class="input__box">
+                    <label class="surname" for="surname">Фамилия
+                        <input class="input1" type="text" name="surname" placeholder="Введите фамилию" id="surname" />
+                    </label>
+                    <p>Поле обязательно для заполнения.
+                        <br>Используйте буквы русского алфавита.</p>
+                </div>
+                <div class="mandatory1 message_color"></div>
+                <div class="input__box">
+                    <label class="name" for="name">Имя
+                        <input class="input2" type="text" name="name" placeholder="Введите имя" id="name" />
+                    </label>
+                    <p>Поле обязательно для заполнения.
+                        <br>Используйте буквы русского алфавита.</p>
+                </div>
+                <div class="mandatory2 message_color"></div>
+                <div class="input__box">
+                    <label class="second-name" for="secondname">Отчество
+                        <input class="secondname" type="text" name="secondname" placeholder="Введите отчество"
+                            id="secondname" />
+                    </label>
+                    <p>Используйте буквы русского алфавита.</p>
+                </div>
+                <div class="input__box">
+                    <label class="email" for="email">Адрес электронной почты
+                        <input class="input3" type="text" name="email" placeholder="name@example.com" id="email" />
+                    </label>
+                    <p>Не рекомендуется указывать чужой или<br>корпоративный адрес электронной почты.</p>
+                </div>
+                <div class="mandatory3 message_color"></div>
+                <div class="input__box">
+                    <label class="phone" for="phone">Номер мобильного телефона
+                        <input class="input4" type="tel" name="phone" placeholder="+7 (900) 123 45 67" id="phone" />
+                    </label>
+                    <p>Для подтверждения номера мобильного телефона<br>вам будет направлено SMS с кодом подтверждения.
+                    </p>
+                </div>
+                <div class="mandatory4 message_color"></div>
+            </div>
+        </form>
+        <form>
+            <div class="inputs">
+                <h3>Пароль</h3>
+                <div class="input__box">
+                    <label class="password1" for="password">Придумайте пароль
+                        <input class="input5" type="password" name="password" placeholder="Пароль" id="password" />
+                    </label>
+                    <p>Не используйте одинаковые пароли на разных сайтах.</p>
+                </div>
+                <div class="mandatory5 message_color"></div>
+                <div class="input__box">
+                    <label class="password2" for="password2">Повторите пароль, чтобы не ошибиться
+                        <input class="input6" type="password" name="password" placeholder="Ваш пароль еще раз"
+                            id="password2" />
+                    </label>
+                </div>
+                <div class="mandatory6 message_color"></div>
+            </div>
+        </form>
+        <form>
+            <div class="inputs">
+                <h3>Контрольный вопрос</h3>
+                <div class="input__box">
+                    <label class="control-question" for="question">Контрольный вопрос
+                        <input class="question" type="text" name="question" placeholder="Введите контрольный вопрос"
+                            id="question" />
+                    </label>
+                </div>
+                <div class="input__box">
+                    <label class="control-answer" for="answer">Ответ
+                        <input class="answer" type="text" name="answer"
+                            placeholder="Введите ответ на контрольный вопрос" id="answer" />
+                    </label>
+                </div>
+                <div class="form__footer">
+                    <p>Нажимая на кнопку «Зарегистрироваться» вы соглашаетесь с <a class="conditions"
+                            href="https://www.mos.ru/legal/rules/" target="_blank">условиями
+                            использования</a></p>
+                    <button type="button" class="register__button">Зарегистрироваться</button>
+                </div>
+                <div class="welcome"></div>
+            </div>
+        </form>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
