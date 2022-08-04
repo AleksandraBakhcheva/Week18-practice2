@@ -6,9 +6,11 @@ const QUESTION_REPLY = "Пожалуйста, используйте буквы 
 const ERRORCOLOR = "rgb(192, 17, 17)";
 const CORRECTCOLOR = "rgba(0, 128, 0, 0.876)";
 
-
-const BUTTON = document.querySelector(".register__button");
-BUTTON.addEventListener("click", checkInput);
+let form = document.querySelector("form");
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    checkInput();
+});
 
 // ВЫВОД ОШИБКИ НА НЕЗАПОЛНЕННОЕ ПОЛЕ
 function errorMessage(input, msg) {

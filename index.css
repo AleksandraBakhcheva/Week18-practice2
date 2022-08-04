@@ -26,6 +26,10 @@ form {
     max-height: 60px;
     margin-right: 3%;
 }
+.divider:empty {
+    height: 55px;
+    background-color: rgba(214, 218, 222, 0.5);;
+}
 .input1, .input2, 
 .secondname, .input3, 
 .input4, .input5, .input6,
