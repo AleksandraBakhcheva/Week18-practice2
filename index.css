@@ -29,14 +29,14 @@ form {
 .input1, .input2, 
 .secondname, .input3, 
 .input4, .input5, .input6,
-.question, .answer {
+.question, .reply {
     display: block;
     margin-top: 1%;
 }
 .surname, .name, .second-name,
 .email, .phone, .password1,
 .password2, .control-question,
-.control-answer {
+.control-reply {
     margin-top: 3%;
 }
 .input__box {
@@ -49,11 +49,19 @@ form {
     font-size: 0.8rem;
 }
 .message_color {
+    width: 47%;
     margin-top: 1%;
     font-size: 0.9rem;
     color: rgb(192, 17, 17);
 }
+.message_color_1 {
+    width: 47%;
+    margin-top: 1%;
+    font-size: 0.9rem;
+    color: rgba(0, 128, 0, 0.876);
+}
 .welcome {
+    width: 47%;
     margin-top: 3%;
     color: rgba(0, 128, 0, 0.876);
 }

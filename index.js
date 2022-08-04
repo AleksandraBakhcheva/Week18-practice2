@@ -1,7 +1,8 @@
 const IMPORTANTMESSAGE = "Обязательное поле";
-const PHONEMESSAGE = "Введите номер мобильного телефона в формате<br>+7(910)1234567. Не указывайте городской номер";
+const PHONEMESSAGE = "Введите номер мобильного телефона в формате<br>+7 (910) 123 45 67. Не указывайте городской номер";
 const INCORRECTLANG = "Это значение некорректно";
 const INCORRECTPASSWORD = "Пароль должен содержать английские буквы, цифры, специальные знаки, разный регистр символов. Минимальная длина пароля составляет 8 символов";
+const QUESTION_REPLY = "Пожалуйста, используйте буквы русского алфавита, цифры и специальные знаки";
 const ERRORCOLOR = "rgb(192, 17, 17)";
 const CORRECTCOLOR = "rgba(0, 128, 0, 0.876)";
 
@@ -57,27 +58,27 @@ const FIOCHECK = /^[а-яА-ЯЁё]{2,20}$/;
 let inputSurname = document.querySelector('.input1');
 inputSurname.addEventListener("keyup", function() {
     InputProvided('.surname', '.mandatory1');
-    inputCheck(FIOCHECK, inputSurname, '.surname', '.mandatory1');
+    inputCheck(FIOCHECK, inputSurname, '.surname', '.mandatory1', INCORRECTLANG);
 });
 
 let inputName = document.querySelector('.input2');
 inputName.addEventListener("keyup", function() {
     InputProvided('.name', '.mandatory2');
-    inputCheck(FIOCHECK, inputName, '.name', '.mandatory2');
+    inputCheck(FIOCHECK, inputName, '.name', '.mandatory2', INCORRECTLANG);
 });
 
 let inputEmail = document.querySelector('.input3');
 inputEmail.addEventListener("keyup", function() {
     InputProvided('.email', '.mandatory3');
     const EMAILCHECK = /^([\w\d._\-#])+@([\w\d._\-#]+[.][\w\d._\-#]+)$/i;
-    inputCheck(EMAILCHECK, inputEmail, '.email', '.mandatory3');
+    inputCheck(EMAILCHECK, inputEmail, '.email', '.mandatory3', INCORRECTLANG);
 });
 
 let inputPhone = document.querySelector('.input4');
 inputPhone.addEventListener("keyup", function() {
     InputProvided('.phone', '.mandatory4');
     const PHONECHECK = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
-    inputCheck(PHONECHECK, inputPhone, '.phone', '.mandatory4');
+    inputCheck(PHONECHECK, inputPhone, '.phone', '.mandatory4', PHONEMESSAGE);
 });
 
 const PASSWORDCHECK = /^(?=.*\d)(?=.*[a-z])(?=.*[!@#$&*])(?=.*[A-Z])(?=(.*[a-zA-Z]){4}).{8,20}$/;
@@ -85,7 +86,7 @@ const PASSWORDCHECK = /^(?=.*\d)(?=.*[a-z])(?=.*[!@#$&*])(?=.*[A-Z])(?=(.*[a-zA-
 let inputPassword1 = document.querySelector('.input5');
 inputPassword1.addEventListener("keyup", function() {
     InputProvided('.password1', '.mandatory5');
-    inputCheck(PASSWORDCHECK, inputPassword1, '.password1', '.mandatory5');
+    inputCheck(PASSWORDCHECK, inputPassword1, '.password1', '.mandatory5', INCORRECTPASSWORD);
 });
 
 let inputPassword2 = document.querySelector('.input6');
@@ -94,6 +95,20 @@ inputPassword2.addEventListener("keyup", function() {
 });
 
 inputPassword2.addEventListener("keyup", passwordValidation);
+
+const QUESTION_REPLYCHECK = /^[?!,.а-яА-ЯёЁ0-9\s]+$/;
+
+let inputQuestion = document.querySelector('.question');
+inputQuestion.addEventListener("keyup", function() {
+    InputProvided('.control-question', '.mandatory7');
+    inputCheck(QUESTION_REPLYCHECK, inputQuestion, '.control-question', '.mandatory7', QUESTION_REPLY);
+});
+
+let inputReply = document.querySelector('.reply');
+inputReply.addEventListener("keyup", function() {
+    InputProvided('.control-reply', '.mandatory8');
+    inputCheck(QUESTION_REPLYCHECK, inputReply, '.control-reply', '.mandatory8', QUESTION_REPLY);
+});
 
 // ПРОВЕРКА НА СОВПАДЕНИЕ ПАРОЛЕЙ 
 function passwordValidation() {
@@ -106,9 +121,9 @@ function passwordValidation() {
 }   
 
 // ВАЛИДАЦИЯ ПОЛЯ 
-function inputCheck(regex, input, error, message) {
+function inputCheck(regex, input, labelcolor, message, error) {
     if (regex.test(input.value) == false) {
-        document.querySelector(error).style.color = ERRORCOLOR;
-        document.querySelector(message).innerHTML = INCORRECTLANG;
+        document.querySelector(labelcolor).style.color = ERRORCOLOR;
+        document.querySelector(message).innerHTML = error;
     }
 }
