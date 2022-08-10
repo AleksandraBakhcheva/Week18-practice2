@@ -128,7 +128,7 @@ function isPasswordValid() {
 
 // ВАЛИДАЦИЯ ПОЛЯ 
 function isInputValid(regex, input, labelcolor, message, error) {
-    if (regex.test(input.value) == false) {
+    if (regex.test(input.value) === false) {
         document.querySelector(labelcolor).style.color = ERRORCOLOR;
         document.querySelector(message).innerHTML = error;
     }
